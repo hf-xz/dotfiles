@@ -4,6 +4,7 @@
 alias zshconf='$EDITOR ~/.zshrc'
 alias aliasconf='$EDITOR ~/.alias'
 alias sshconf='$EDITOR ~/.ssh/config'
+alias dotconf='$EDITOR ~/.dotfiles/install.conf.yaml'
 
 # lazy
 alias lg='lazygit'

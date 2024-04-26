@@ -1,0 +1,307 @@
+" vimrc
+
+" options {{{
+setlocal foldmethod=marker  " 设置本文件折叠
+set nocompatible            " 开启不兼容vi模式
+
+" 显示
+"set nonumber            " 关闭行号
+set number              " 开启行号
+set relativenumber      " 开启相对行号
+set wrap                " 自动折行
+set scrolloff=5         " 纵向滚动边界
+set sidescrolloff=10    " 横向滚动边界
+set ruler               " 显示光标行列
+set showcmd             " 显示输入命令
+set noshowmode          " 显示命令模式
+set wildmenu            " 命令提示菜单
+set pumheight=20        " 弹出菜单高度
+
+" 行为
+set mouse=nv            " 鼠标模式
+set autoindent          " 自动缩进
+set expandtab           " 展开制表符
+set autoread            " 自动读取
+"set autowriteall        " 自动写入
+set splitright          " 右侧新窗口
+set splitbelow          " 下侧新窗口
+set hidden              " 切换文件不提示未保存
+set clipboard=unnamedplus       " 系统剪贴板
+set backspace=eol,start,indent  " 增强退格
+
+" 缩进与格式
+filetype indent on
+set shiftwidth=4        " 缩进大小
+set tabstop=4           " 制表符显示宽度
+set softtabstop=4       " 制表符展开宽度
+
+" 代码高亮
+filetype on
+syntax on
+set termguicolors
+colorscheme slate
+
+" 当前行高亮
+set cursorline
+hi CursorLine gui=bold cterm=bold
+"hi CursorLineNr gui=bold cterm=bold
+
+" 设置背景透明度
+hi Normal ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE
+hi LineNr ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
+hi CursorLineNr ctermbg=NONE guibg=NONE
+
+" 空白字符
+set list
+set listchars=tab:▸\ ,trail:·,precedes:←,extends:→
+
+" 编码
+set encoding=utf-8
+set fileencodings=utf-8,gb2312,gbk,gb18030,latin1
+set fileformat=unix
+set fileformats=unix,dos
+
+" 搜索
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" 各种文件存放
+set nobackup       " 禁用备份文件
+set nowritebackup  " 禁用只读备份文件
+"set noswapfile     " 禁用交换文件
+set noundofile     " 禁用撤销文件
+if has('nvim')
+  set backup
+  set backupdir=~/.cache/nvim/backup
+  set undofile
+  set undodir=~/.cache/nvim/undo
+  set swapfile
+  set directory=~/.cache/nvim/swap
+endif
+
+" diff 模式设置
+set diffopt=vertical,filler,context:4
+
+" let g:python3_host_prog = '/usr/bin/python3'
+" let g:loaded_node_provider = 0
+" let g:loaded_ruby_provider = 0
+" let g:loaded_perl_provider = 0
+" let g:ROOT_MARKERS = [ '.git', '.hg', '.svn', '.root', '.project', 'Makefile' ]
+" " append runtimepath
+" set rtp+=~/.config/nvim/my-snippets/
+" }}}
+
+" keymaps {{{
+" ------------------------------------------------------------------------------
+" -- Mode           | Norm | Ins | Cmd | Vis | Sel | Opr | Term | Lang |
+" -- Command        +------+-----+-----+-----+-----+-----+------+------+
+" -- [nore]map      | yes  |  -  |  -  | yes | yes | yes |  -   |  -   |
+" -- n[nore]map     | yes  |  -  |  -  |  -  |  -  |  -  |  -   |  -   |
+" -- [nore]map!     |  -   | yes | yes |  -  |  -  |  -  |  -   |  -   |
+" -- i[nore]map     |  -   | yes |  -  |  -  |  -  |  -  |  -   |  -   |
+" -- c[nore]map     |  -   |  -  | yes |  -  |  -  |  -  |  -   |  -   |
+" -- v[nore]map     |  -   |  -  |  -  | yes | yes |  -  |  -   |  -   |
+" -- x[nore]map     |  -   |  -  |  -  | yes |  -  |  -  |  -   |  -   |
+" -- s[nore]map     |  -   |  -  |  -  |  -  | yes |  -  |  -   |  -   |
+" -- o[nore]map     |  -   |  -  |  -  |  -  |  -  | yes |  -   |  -   |
+" -- t[nore]map     |  -   |  -  |  -  |  -  |  -  |  -  | yes  |  -   |
+" -- l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
+" -- Modes
+" -- normal_mode = "n",
+" -- insert_mode = "i",
+" -- visual_mode = "v",
+" -- visual_block_mode = "x",
+" -- term_mode = "t",
+" -- command_mode = "c",
+
+let mapleader = "\<Space>"
+
+"inoremap jj <Esc>
+
+" 更好的 jk
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" 更小的跳跃
+nnoremap <C-u> 9k
+nnoremap <C-d> 9j
+vnoremap <C-u> 9k
+vnoremap <C-d> 9j
+
+" 智能居中
+function Redraw()
+  let l = winline()
+  let cmd = l * 2 <= winheight(0) + 1 ? l <= (&so + 1) ? 'zb' : 'zt' : 'zz'
+  return cmd
+endfu
+nnoremap <expr>zz Redraw()
+
+" H, L 跳转行首行尾
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+onoremap H ^
+onoremap L $
+
+" K 开启下一行
+nnoremap K i<CR><ESC>
+
+" JK 移动代码
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" 搜索
+nnoremap n nzz<cmd>set hlsearch<CR>
+nnoremap N Nzz<cmd>set hlsearch<CR>
+nnoremap * *N<cmd>set hlsearch<CR>
+nnoremap # #N<cmd>set hlsearch<CR>
+nnoremap <leader>h <cmd>noh<CR>
+
+" 保存与退出
+nnoremap <leader>w <cmd>w<CR>
+nnoremap <leader>q <cmd>q<CR>
+nnoremap <leader>Q <cmd>q!<CR>
+nnoremap <leader>x <cmd>x<CR>
+
+" 缩进格式化
+nnoremap == gg=G``zz
+"vnoremap > >gv
+"vnoremap < <gv
+
+" 重复粘贴
+vnoremap ,p pgvy
+
+" 显示行号
+nnoremap <leader>ll <cmd>set number! relativenumber!<CR>
+
+" 定义文本对象
+onoremap <silent>ie :<C-u>normal! ggVG<CR>
+xnoremap <silent>ie :<C-u>normal! ggVG<CR>
+"onoremap <silent>ae :<C-u>normal! ggVG<CR>
+"xnoremap <silent>ae :<C-u>normal! ggVG<CR>
+
+onoremap <silent>i, i<
+onoremap <silent>a, a<
+xnoremap <silent>i, i<
+xnoremap <silent>a, a<
+
+onoremap <silent>i. i>
+onoremap <silent>a. a>
+xnoremap <silent>i. i>
+xnoremap <silent>a. a>
+
+onoremap <silent>i9 i(
+onoremap <silent>a9 a(
+xnoremap <silent>i9 i(
+xnoremap <silent>a9 a(
+
+onoremap <silent>i0 i)
+onoremap <silent>a0 a)
+xnoremap <silent>i0 i)
+xnoremap <silent>a0 a)
+
+" 切换窗口
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" 分屏
+nnoremap <leader>-  <cmd>split<CR>
+nnoremap <leader>\ <cmd>vsplit<CR>
+
+" 改变分屏大小
+nnoremap <C-S-Up>    <cmd>resize +2<CR>
+nnoremap <C-S-Down>  <cmd>resize -2<CR>
+nnoremap <C-S-Left>  <cmd>vertical resize +2<CR>
+nnoremap <C-S-Right> <cmd>vertical resize -2<CR>
+
+" 切换 buffer
+nnoremap <space>] <cmd>bnext<CR>
+nnoremap <space>[ <cmd>bprevious<CR>
+
+" 插入模式 emacs 光标移动
+inoremap <C-a>   <Home>
+inoremap <C-e>   <End>
+inoremap <C-f>   <Right>
+inoremap <C-b>   <Left>
+inoremap <C-d>   <Del>
+
+" 命令模式 emacs 光标移动
+cnoremap <C-a>   <Home>
+cnoremap <C-e>   <End>
+cnoremap <C-f>   <Right>
+cnoremap <C-b>   <Left>
+cnoremap <C-d>   <Del>
+
+" 居中显示
+nnoremap G Gzz
+inoremap <C-l> <C-o>zz
+
+" 简单自动配对
+if !has('nvim')
+  inoremap ( ()<Left>
+  inoremap <expr> ) getline(line('.'))[col('.')-1]==')' ? '<Right>' : ')'
+
+  inoremap [ []<Left>
+  inoremap <expr> ] getline(line('.'))[col('.')-1]==']' ? '<Right>' : ']'
+
+  inoremap { {}<Left>
+  inoremap <expr> } getline(line('.'))[col('.')-1]=='}' ? '<Right>' : '}'
+
+  inoremap < <><Left>
+  inoremap <expr> > getline(line('.'))[col('.')-1]=='>' ? '<Right>' : '>'
+
+  " inoremap ' ''<Left>
+  " inoremap <expr> ' getline(line('.'))[col('.')-1]=="'" ? '<Right>' : "'"
+  " inoremap " ""<Left>
+  " inoremap <expr> " getline(line('.'))[col('.')-1]=='"' ? '<Right>' : '"'
+  " inoremap ` ``<Left>
+  " inoremap <expr> ` getline(line('.'))[col('.')-1]=='`' ? '<Right>' : '`'
+endif
+" }}}
+
+" autocmd {{{
+augroup _general_settings
+  " 清空 autocmd
+  autocmd!
+  " 帮助文件中按 q 退出
+  autocmd FileType qf,help,man,checkhealth,startuptime nnoremap <silent><buffer> q <cmd>close<CR>
+  " 缩进 2 文件
+  autocmd FileType vim,lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType json,json5,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+  " 不换行文件
+  autocmd FileType help setlocal nowrap
+  " nvim 高亮复制内容
+  if has('nvim')
+    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({ timeout = 500 })
+  endif
+  " 取消换行保持注释
+  autocmd BufWinEnter * set formatoptions-=cro
+  " 光标不动后取消高亮
+  autocmd CursorHold * set nohlsearch
+augroup end
+" }}}
+
+" vim only config {{{
+"if has('nvim')
+finish
+"endif
+
+" builtin plugin: netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
+set fillchars=vert:\⎜
+nnoremap <leader>e :Lexplore<CR>
+autocmd FileType netrw nnoremap <buffer><nowait> q <cmd>close<CR>
+" }}}
