@@ -166,7 +166,7 @@ nnoremap <leader>h <cmd>noh<CR>
 
 " 保存与退出
 nnoremap <leader>w <cmd>w<CR>
-nnoremap <leader>qq <cmd>qa<CR>
+nnoremap <leader>q <cmd>q<CR>
 nnoremap <leader>Q <cmd>q!<CR>
 nnoremap <leader>x <cmd>x<CR>
 
