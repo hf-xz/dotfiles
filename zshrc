@@ -43,6 +43,7 @@ fi
 # using neovim
 alias vi='nvim'
 export EDITOR='nvim'
+alias vimdiff='nvim -d'
 
 ### common settings end ###
 

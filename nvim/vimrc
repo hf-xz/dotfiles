@@ -168,7 +168,7 @@ nnoremap <leader>h <cmd>noh<CR>
 nnoremap <leader>w <cmd>w<CR>
 nnoremap <leader>qq <cmd>qa<CR>
 nnoremap <leader>qw <cmd>x<CR>
-nnoremap <leader>Q <cmd>q!<CR>
+nnoremap <leader>Q <cmd>qa!<CR>
 
 " 缩进格式化
 nnoremap == gg=G``zz

@@ -43,6 +43,3 @@ map("n", "<leader>n-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>n\\", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>\\", "<C-W>v", { desc = "Split Window Right", remap = true })
-
--- lazy
-map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
