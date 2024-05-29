@@ -140,15 +140,15 @@ function Redraw()
   let cmd = l * 2 <= winheight(0) + 1 ? l <= (&so + 1) ? 'zb' : 'zt' : 'zz'
   return cmd
 endfu
-nnoremap <expr>zl Redraw()
+nnoremap <expr>zz Redraw()
 
 " H, L 跳转行首行尾
-" nnoremap H ^
-" nnoremap L $
-" vnoremap H ^
-" vnoremap L $
-" onoremap H ^
-" onoremap L $
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+onoremap H ^
+onoremap L $
 
 " K 开启下一行
 nnoremap K i<CR><ESC>
@@ -166,40 +166,20 @@ nnoremap <leader>h <cmd>noh<CR>
 
 " 保存与退出
 nnoremap <leader>w <cmd>w<CR>
-nnoremap <leader>qq <cmd>qa<CR>
-nnoremap <leader>qw <cmd>x<CR>
-nnoremap <leader>Q <cmd>qa!<CR>
+nnoremap <leader>q <cmd>q<CR>
+nnoremap <leader>Q <cmd>q!<CR>
+nnoremap <leader>x <cmd>x<CR>
 
 " 缩进格式化
 nnoremap == gg=G``zz
 "vnoremap > >gv
 "vnoremap < <gv
 
-" 删除 mark
-function! UnmarkMark()
-  let mark = nr2char(getchar())
-  if mark =~ '\a'  " 检查是否为字母
-    let cmd = 'delm '.mark
-    execute cmd
-    echo 'Mark '.mark.' removed'
-  elseif mark == '!'
-    delm!
-  else
-    echo 'Invalid mark'
-  endif
-  " neovim need update shada
-  if has('nvim')
-    wshada!
-  endif
-endfunction
-nnoremap <silent>M :call UnmarkMark()<CR>
-
 " 重复粘贴
 vnoremap ,p pgvy
 
 " 显示行号
-nnoremap <leader>ul <cmd>set number!<CR>
-nnoremap <leader>uL <cmd>set relativenumber!<CR>
+nnoremap <leader>ll <cmd>set number! relativenumber!<CR>
 
 " 定义文本对象
 onoremap <silent>ie :<C-u>normal! ggVG<CR>
@@ -216,6 +196,16 @@ onoremap <silent>i. i>
 onoremap <silent>a. a>
 xnoremap <silent>i. i>
 xnoremap <silent>a. a>
+
+onoremap <silent>i9 i(
+onoremap <silent>a9 a(
+xnoremap <silent>i9 i(
+xnoremap <silent>a9 a(
+
+onoremap <silent>i0 i)
+onoremap <silent>a0 a)
+xnoremap <silent>i0 i)
+xnoremap <silent>a0 a)
 
 " 切换窗口
 nnoremap <C-h> <C-w>h
@@ -234,8 +224,8 @@ nnoremap <C-S-Left>  <cmd>vertical resize +2<CR>
 nnoremap <C-S-Right> <cmd>vertical resize -2<CR>
 
 " 切换 buffer
-nnoremap L <cmd>bnext<CR>
-nnoremap H <cmd>bprevious<CR>
+nnoremap <space>] <cmd>bnext<CR>
+nnoremap <space>[ <cmd>bprevious<CR>
 
 " 插入模式 emacs 光标移动
 inoremap <C-a>   <Home>
