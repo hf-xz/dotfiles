@@ -31,6 +31,10 @@ alias 1414='ssh 1414'
 alias 1421='ssh 1421'
 alias 1422='ssh 1422'
 
-alias build21='ssh 1421 "cd /data/appBins/traffic/traffic-ui && ./package.sh && /usr/bin/docker-compose -f /data/appBins/basic/docker/docker-compose.yml restart traffic-ui"'
+function build21() {
+    ssh 1421 "cd /data/appBins/traffic/traffic-ui && ./package.sh $1 && /usr/bin/docker-compose -f /data/appBins/basic/docker/docker-compose.yml restart traffic-ui"
+}
 
-alias build22='ssh 1422 "cd /data/appBins/traffic/traffic-ui && ./package.sh release-1.1.1 && /usr/bin/docker-compose -f /data/appBins/basic/docker/docker-compose-1422.yml restart traffic-ui"'
+function build22() {
+    ssh 1422 "cd /data/appBins/traffic/traffic-ui && ./package.sh $1 && /usr/bin/docker-compose -f /data/appBins/basic/docker/docker-compose-1422.yml restart traffic-ui"
+}
