@@ -298,6 +298,12 @@ augroup _general_settings
   " 光标不动后取消高亮
   autocmd CursorHold * set nohlsearch
 augroup end
+
+augroup _run_code
+  " 运行代码
+  autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+  autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+augroup end
 " }}}
 
 " vim only config {{{
