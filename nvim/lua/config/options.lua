@@ -5,3 +5,4 @@ local opt = vim.opt
 
 opt.wrap = true
 opt.scrolloff = 5
+opt.spelllang = { "en", "cjk" }
