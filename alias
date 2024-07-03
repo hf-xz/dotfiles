@@ -19,10 +19,18 @@ alias ty='open -a typora'
 alias live='npx live-server --no-browser'
 alias gu='gitup .'
 
+# python3
+alias python='python3'
+alias pip='pip3'
+
 # open method
 alias -s py='python3'
 alias -s go='go run'
 alias -s md=ty
+
+# mongodb
+alias startmongo='brew services start mongodb-community'
+alias stopmongo='brew services stop mongodb-community'
 
 ### temporary ###
 alias gg='ssh gg -t "tmux a -t hf_xz"'
