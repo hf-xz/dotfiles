@@ -1,5 +1,5 @@
 -- start at home directory
-vim.cmd("cd ~")
+-- vim.cmd("cd ~")
 
 vim.o.guifont = "FiraCode Nerd Font:h14"
 vim.opt.linespace = 0
