@@ -35,7 +35,7 @@ bindkey '^e' edit-command-line
 
 # basic alias
 alias cl="clear"
-# alias rm="rm -i"
+alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 # custom alias

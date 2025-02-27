@@ -36,16 +36,4 @@ alias startmongo='brew services start mongodb-community'
 alias stopmongo='brew services stop mongodb-community'
 
 ### temporary ###
-alias gg='ssh gg -t "tmux a -t hf_xz"'
-alias 1411='ssh 1411'
-alias 1414='ssh 1414'
-alias 1421='ssh 1421'
-alias 1422='ssh 1422'
 
-function build21() {
-    ssh 1421 "cd /data/appBins/factory/cross-check-ui && ./package.sh $1 && /usr/bin/docker-compose -f /data/appBins/basic/docker/docker-compose.yml restart cross-check-ui"
-}
-
-function build22() {
-    ssh 1422 "cd /data/appBins/traffic/traffic-ui && ./package.sh $1 && /usr/bin/docker-compose -f /data/appBins/basic/docker/docker-compose-1422.yml restart traffic-ui"
-}
