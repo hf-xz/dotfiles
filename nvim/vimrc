@@ -1,5 +1,7 @@
 " vimrc
 
+" 旧版本需要 将 <cmd> 替换为 : 以保证按键绑定正常运行
+
 " options {{{
 setlocal foldmethod=marker  " 设置本文件折叠
 set nocompatible            " 开启不兼容vi模式
@@ -43,8 +45,8 @@ colorscheme slate
 
 " 当前行高亮
 set cursorline
-hi CursorLine gui=bold cterm=bold
-"hi CursorLineNr gui=bold cterm=bold
+hi CursorLine gui=bold cterm=bold ctermbg=black
+hi CursorLineNr gui=bold cterm=bold
 
 " 设置背景透明度
 hi Normal ctermbg=NONE guibg=NONE
