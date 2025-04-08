@@ -1,7 +1,7 @@
 ### permanent ###
 
 # config
-alias zshconf='$EDITOR ~/.zshrc'
+alias zshconf='$EDITOR ~/.zshrc && source ~/.zshrc'
 alias aliasconf='$EDITOR ~/.alias'
 alias sshconf='$EDITOR ~/.ssh/config'
 alias dotconf='$EDITOR ~/.dotfiles/install.conf.yaml'
