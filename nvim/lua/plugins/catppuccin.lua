@@ -1,8 +1,9 @@
-return {
+Catppuccin = {
   "catppuccin/nvim",
   lazy = true,
   name = "catppuccin",
   opts = {
+    transparent_background = true, -- This cause neovide has no background color
     integrations = {
       aerial = true,
       alpha = true,
@@ -40,3 +41,9 @@ return {
     },
   },
 }
+
+if vim.g.neovide then
+  Catppuccin.opts.transparent_background = false
+end
+
+return Catppuccin

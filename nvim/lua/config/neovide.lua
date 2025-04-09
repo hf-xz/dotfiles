@@ -7,7 +7,7 @@ vim.opt.linespace = 0
 -- vim.g.neovide_padding_top = 8
 
 vim.g.neovide_theme = "dark"
-vim.g.neovide_transparency = 0.85
+vim.g.neovide_opacity = 0.92
 vim.g.neovide_window_blurred = true
 
 vim.g.neovide_input_macos_alt_is_meta = false
