@@ -23,6 +23,10 @@ alias gu='gitup .'
 alias python='python3'
 alias pip='pip3'
 
+# python venv
+alias mkvenv='python3 -m venv .venv'
+alias actvenv='. .venv/bin/activate'
+
 # neovide
 alias nv='neovide .'
 
