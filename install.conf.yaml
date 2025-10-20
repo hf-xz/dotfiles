@@ -15,6 +15,7 @@
     ~/.config/lazygit/config.yml: lazygit/config.yml
     ~/.config/neovide/config.toml: neovide/config.toml
     ~/.config/nvim: nvim/
+    ~/.config/yazi: yazi/
     ~/.vimrc: nvim/vimrc
 
 - create:
