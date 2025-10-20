@@ -7,8 +7,13 @@
 
 - link:
     ~/.zshrc:
+    ~/.zprofile:
     ~/.alias:
     ~/.tmux.conf:
+    ~/.gitconfig:
+    ~/.gitignore_global:
+    ~/.config/lazygit/config.yml: lazygit/config.yml
+    ~/.config/neovide/config.toml: neovide/config.toml
     ~/.config/nvim: nvim/
     ~/.vimrc: nvim/vimrc
 

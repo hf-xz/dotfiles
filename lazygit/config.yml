@@ -1,0 +1,7 @@
+gui:
+  showPanelJumps: false
+  showBottomLine: false
+  showListFooter: false
+  showRootItemInFileTree: false
+  nerdFontsVersion: "3"
+  border: 'single'

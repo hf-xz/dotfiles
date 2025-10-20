@@ -1,0 +1,22 @@
+[user]
+	name = hfxz
+	email = xuan__zai@outlook.com
+[core]
+	autocrlf = input
+  excludesfile = /Users/hfxz/.gitignore_global
+[merge]
+  tool = extMerge
+[mergetool "extMerge"]
+  cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+[diff]
+  external = extDiff
+  tool = vimdiff
+[mergetool]
+  trustExitCode = false
+  keepTemporaries = false
+  keepBackup = false
+  prompt = false
+[push]
+  default = upstream
+[pull]
+	rebase = false

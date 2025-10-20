@@ -7,17 +7,14 @@ alias sshconf='$EDITOR ~/.ssh/config'
 alias dotconf='$EDITOR ~/.dotfiles/install.conf.yaml'
 alias gitconf='$EDITOR ~/.gitconfig'
 
-# lazy
+# lazygit
 alias lg='lazygit'
-alias lzd='lazydocker'
-alias lzs='lazysql'
 
 # tmux
 alias t='tmux new-session -A -s'
 
 # shortcut
 alias ty='open -a typora' 
-alias live='npx live-server --no-browser'
 alias gu='gitup .'
 
 # python3
@@ -31,14 +28,13 @@ alias actvenv='. .venv/bin/activate'
 # neovide
 alias nv='neovide .'
 
+# ripgrep
+alias grep='command rg'
+
 # open method
 alias -s py='python3'
 alias -s go='go run'
 alias -s md=ty
-
-# mongodb
-alias startmongo='brew services start mongodb-community'
-alias stopmongo='brew services stop mongodb-community'
 
 ### temporary ###
 
