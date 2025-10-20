@@ -230,7 +230,7 @@ nnoremap <C-l> <C-w>l
 
 " 分屏
 nnoremap <leader>-  <cmd>split<CR>
-nnoremap <leader>\| <cmd>vsplit<CR>
+nnoremap <leader>\ <cmd>vsplit<CR>
 
 " 改变分屏大小
 nnoremap <C-S-Up>    <cmd>resize +2<CR>

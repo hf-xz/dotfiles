@@ -2,9 +2,10 @@
 
 # config
 alias zshconf='$EDITOR ~/.zshrc && source ~/.zshrc'
-alias aliasconf='$EDITOR ~/.alias'
+alias aliasconf='$EDITOR ~/.alias && source ~/.dotfiles/alias'
 alias sshconf='$EDITOR ~/.ssh/config'
 alias dotconf='$EDITOR ~/.dotfiles/install.conf.yaml'
+alias gitconf='$EDITOR ~/.gitconfig'
 
 # lazy
 alias lg='lazygit'

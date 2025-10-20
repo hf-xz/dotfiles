@@ -1,7 +1,8 @@
 -- start at home directory
 -- vim.cmd("cd ~")
 
-vim.o.guifont = "FiraCode Nerd Font:h14"
+-- vim.o.guifont = "FiraCode Nerd Font:h14"
+vim.o.guifont = "Maple Mono NF CN:h14"
 vim.opt.linespace = 0
 
 -- vim.g.neovide_padding_top = 8

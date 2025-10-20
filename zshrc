@@ -60,32 +60,13 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# serveo
-serveo() {
-  if [[ $# -eq 0 ]]; then
-    echo "错误：必须指定本地端口号！"
-    echo "用法：serveo <本地端口>"
-    return 1  # 返回非零状态码表示失败
-  fi
-
-  local port="$1"
-  # 可选：验证端口是否为有效数字（1-65535）
-  if ! [[ "$port" =~ ^[0-9]+$ ]] || ((port < 1 || port > 65535)); then
-    echo "错误：端口号必须是 1-65535 之间的整数！"
-    return 1
-  fi
-
-  # 执行 SSH 端口转发
-  ssh -R "serveo.hfxz.link:80:localhost:${port}" serveo.net
-}
-
 # ripgrep
 alias grep='command rg'
 
 #
 
 # proxy
-# export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
