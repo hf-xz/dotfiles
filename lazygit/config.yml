@@ -3,5 +3,6 @@ gui:
   showBottomLine: false
   showListFooter: false
   showRootItemInFileTree: false
+  useHunkModeInStagingView: false # 默认行模式
   nerdFontsVersion: "3"
   border: 'single'
