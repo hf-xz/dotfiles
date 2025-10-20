@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - link:
+    ~/.hushlogin:
     ~/.zshrc:
     ~/.zprofile:
     ~/.alias:
