@@ -1,11 +1,11 @@
-### permanent ###
-
 # config
 alias zshconf='$EDITOR ~/.zshrc && source ~/.zshrc'
-alias aliasconf='$EDITOR ~/.alias && source ~/.dotfiles/alias'
+alias aliasconf='$EDITOR ~/.alias && source ~/.alias'
 alias sshconf='$EDITOR ~/.ssh/config'
-alias dotconf='$EDITOR ~/.dotfiles/install.conf.yaml'
 alias gitconf='$EDITOR ~/.gitconfig'
+
+# no-proxy
+alias noProxy='unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy'
 
 # brew
 alias brewClean="brew cleanup && brew autoremove"
@@ -38,6 +38,12 @@ alias -s py='python3'
 alias -s go='go run'
 alias -s md=ty
 
-### temporary ###
+# minikube
+alias startKube='minikube start \
+  --docker-env HTTP_PROXY=http://host.docker.internal:7890 \
+  --docker-env HTTPS_PROXY=http://host.docker.internal:7890 \
+  --docker-env NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.49.0/24'
+alias stopKube='minikube stop'
 
+### temporary ###
 alias buildTraffic='ssh 40 "cd /data/appBins/traffic/traffic-ui && sh ./package.sh"'
