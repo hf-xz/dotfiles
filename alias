@@ -1,8 +1,14 @@
 # config
 alias zshconf='$EDITOR ~/.zshrc'
 alias aliasconf='$EDITOR ~/.alias && source ~/.alias'
+alias scriptsconf='$EDITOR ~/.scripts && ~/.scripts/setup.sh'
 alias sshconf='$EDITOR ~/.ssh/config'
 alias gitconf='$EDITOR ~/.gitconfig'
+
+# source
+alias srczsh='source ~/.zshrc'
+alias srcalias='source ~/.alias'
+alias srcscripts='~/.scripts/setup.sh'
 
 # no-proxy
 alias noProxy='unset HTTP_PROXY HTTPS_PROXY http_proxy https_proxy'

@@ -4,7 +4,8 @@ export http_proxy=http://127.0.0.1:7890
 export all_proxy=socks5://127.0.0.1:7890
 
 # PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.scripts/bin:$PATH"
 
 # environment variables
 export XDG_CONFIG_HOME="$HOME/.config"
