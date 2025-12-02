@@ -25,4 +25,5 @@
     - ~/.cache/nvim/undo
     - ~/.cache/nvim/swap
 
-- shell: []
+- shell:
+    - ~/.scripts/setup.sh
