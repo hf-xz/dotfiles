@@ -19,9 +19,6 @@ alias brewClean="brew cleanup && brew autoremove"
 # lazygit
 alias lg='lazygit'
 
-# tmux
-alias t='tmux new-session -A -s'
-
 # typora
 alias ty='open -a typora' 
 
