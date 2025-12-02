@@ -1,5 +1,5 @@
 # config
-alias zshconf='$EDITOR ~/.zshrc && source ~/.zshrc'
+alias zshconf='$EDITOR ~/.zshrc'
 alias aliasconf='$EDITOR ~/.alias && source ~/.alias'
 alias sshconf='$EDITOR ~/.ssh/config'
 alias gitconf='$EDITOR ~/.gitconfig'
@@ -27,6 +27,9 @@ alias pip='pip3'
 alias mkvenv='python3 -m venv .venv'
 alias actvenv='. .venv/bin/activate'
 
+# docker-compose
+alias compose='docker-compose'
+
 # neovide
 alias nv='neovide .'
 
@@ -44,6 +47,14 @@ alias startKube='minikube start \
   --docker-env HTTPS_PROXY=http://host.docker.internal:7890 \
   --docker-env NO_PROXY=localhost,127.0.0.1,10.96.0.0/12,192.168.49.0/24'
 alias stopKube='minikube stop'
+alias deleteKube='minikube delete'
 
 ### temporary ###
+
+# add ssh-agent key
+alias sshKeys='ssh-add --apple-use-keychain ~/.ssh/hdzb ~/.ssh/id_ed25519 && ssh-add -l'
+
 alias buildTraffic='ssh 40 "cd /data/appBins/traffic/traffic-ui && sh ./package.sh"'
+alias buildKms='ssh 50 "cd /data/appBins/kms/kms-ui && sh ./package.sh"'
+alias buildRsp='ssh 50 "cd /data/appBins/esim-dev/rsp-ui && sh ./package.sh"'
+alias buildRspProd='ssh 54 "cd /data/appBins/esim/rsp-ui && sh ./package.sh"'
