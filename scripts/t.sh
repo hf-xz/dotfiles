@@ -91,9 +91,11 @@ else
     fi
 fi
 
-# 最终执行使用 session
+# 判断取消
 if [[ -z "$session" ]]; then
-    echo "已取消"
+    echo "canceled"
     exit 0
 fi
+
+# 最终执行使用 session
 use_session "$session"
