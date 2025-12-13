@@ -1,9 +1,9 @@
 - defaults:
     link:
-        create: true
-        relink: true
+      create: true
+      relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.hushlogin:
@@ -14,6 +14,7 @@
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.scripts:
+    ~/.config/wezterm/wezterm.lua: wezterm/wezterm.lua
     ~/.config/lazygit/config.yml: lazygit/config.yml
     ~/.config/neovide/config.toml: neovide/config.toml
     ~/.config/nvim: nvim/
