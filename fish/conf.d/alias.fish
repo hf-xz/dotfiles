@@ -1,6 +1,3 @@
-# 基础缩写
-abbr -a cl 'command clear'
-
 # 基础编辑器别名 - 使用 abbr
 abbr -a fishconf '$EDITOR ~/.config/fish/config.fish'
 abbr -a starconf '$EDITOR ~/.config/starship.toml'
@@ -25,8 +22,5 @@ abbr -a nv 'neovide .'
 
 # Docker
 abbr -a compose docker-compose
-
-# 替换 grep 为 rg
-alias grep='command rg'
 
 # 临时别名

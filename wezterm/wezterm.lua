@@ -16,6 +16,13 @@ config = {
 
 	window_background_opacity = 0.92,
 	macos_window_background_blur = 10,
+
+	window_padding = {
+		top = 20,
+		bottom = 20,
+		left = 20,
+		right = 20,
+	},
 }
 
 return config
