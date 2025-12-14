@@ -3,11 +3,11 @@ set -gx https_proxy http://127.0.0.1:7890
 set -gx http_proxy http://127.0.0.1:7890
 set -gx all_proxy socks5://127.0.0.1:7890
 
-# Path
-set -U fish_user_paths ~/bin /usr/local/bin $fish_user_paths
-
 # XDG_CONFIG_HOME
 set -gx XDG_CONFIG_HOME ~/.config
+
+# Path
+set -U fish_user_paths ~/bin /usr/local/bin $fish_user_paths
 
 # Homebrew
 if test -d /opt/homebrew
@@ -20,7 +20,9 @@ if test -e /opt/homebrew/bin/fnm
 end
 
 # Orbstack
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+if test -d ~/.orbstack/
+    source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+end
 
 if status is-interactive
     # Vim mode
