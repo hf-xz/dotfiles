@@ -1,7 +1,7 @@
 - defaults:
     link:
-        create: true
-        relink: true
+      create: true
+      relink: true
 
 - clean: ["~"]
 
@@ -10,10 +10,10 @@
     ~/.zshrc:
     ~/.zprofile:
     ~/.alias:
-    ~/.tmux.conf:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.scripts:
+    ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/wezterm/wezterm.lua: wezterm/wezterm.lua
     ~/.config/fish/config.fish: fish/config.fish
     ~/.config/fish/fish_plugins: fish/fish_plugins
