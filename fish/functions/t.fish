@@ -52,12 +52,13 @@ function t --description 'Tmux session manager with interactive selection'
     # 没有参数，显示交互式菜单
     # 获取所有 session 列表
     set -l sessions (tmux list-sessions -F '#S' 2>/dev/null; or echo "")
+    set -l session
 
     # 如果没有 session 直接创建新的
     if test -z "$sessions"
         # 检查 gum 是否可用
         if command -q gum
-            set -l session (gum input --placeholder "New session name" --prompt "  ")
+            set session (gum input --placeholder "New session name" --prompt "  ")
         else
             read -P "  New session name: " session
         end
@@ -71,7 +72,13 @@ function t --description 'Tmux session manager with interactive selection'
             end
             set -a options "[new session]"
 
-            set -l selected (string join \n $options | gum filter --placeholder "Pick session..." --prompt "  ")
+            set -l height (math (count $options) + 3)
+            set -l selected (string join \n $options | \
+                             gum filter \
+                             --placeholder "Pick session..." \
+                             --prompt "  " \
+                             --height $height \
+            )
 
             if test "$selected" = "[new session]"
                 set session (gum input --placeholder "New session name" --prompt "  ")
