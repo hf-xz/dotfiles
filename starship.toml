@@ -169,7 +169,7 @@ show_milliseconds = false
 style = "fg:crust bg:sapphire"
 format = "[ 󱦟 $duration ]($style)"
 disabled = false
-show_notifications = true
+show_notifications = false
 min_time_to_notify = 45000
 
 [palettes.catppuccin_mocha]
