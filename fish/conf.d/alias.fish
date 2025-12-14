@@ -1,0 +1,32 @@
+# 基础缩写
+abbr -a cl 'command clear'
+
+# 基础编辑器别名 - 使用 abbr
+abbr -a fishconf '$EDITOR ~/.config/fish/config.fish'
+abbr -a starconf '$EDITOR ~/.config/starship.toml'
+abbr -a sshconf '$EDITOR ~/.ssh/config'
+abbr -a gitconf '$EDITOR ~/.gitconfig'
+
+# source 相关
+abbr -a srcfish 'source ~/.config/fish/config.fish'
+abbr -a srcstar 'source ~/.config/starship.toml'
+abbr -a srcenv 'source .venv/bin/activate'
+
+# 网络代理
+alias noProxy='set -e HTTP_PROXY HTTPS_PROXY http_proxy https_proxy; echo "Cleared proxy settings"'
+
+# Homebrew
+abbr -a brewClean 'brew cleanup; and brew autoremove'
+
+# 应用程序
+abbr -a lg lazygit
+abbr -a py python3
+abbr -a nv 'neovide .'
+
+# Docker
+abbr -a compose docker-compose
+
+# 替换 grep 为 rg
+alias grep='command rg'
+
+# 临时别名

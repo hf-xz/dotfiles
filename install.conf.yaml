@@ -15,6 +15,9 @@
     ~/.gitignore_global:
     ~/.scripts:
     ~/.config/wezterm/wezterm.lua: wezterm/wezterm.lua
+    ~/.config/fish/config.fish: fish/config.fish
+    ~/.config/fish/conf.d: fish/conf.d/
+    ~/.config/fish/functions: fish/functions/
     ~/.config/lazygit/config.yml: lazygit/config.yml
     ~/.config/neovide/config.toml: neovide/config.toml
     ~/.config/nvim: nvim/
