@@ -9,12 +9,6 @@ abbr -a srcfish 'source ~/.config/fish/config.fish'
 abbr -a srcstar 'source ~/.config/starship.toml'
 abbr -a srcenv 'source .venv/bin/activate'
 
-# 网络代理
-alias noProxy='set -e HTTP_PROXY HTTPS_PROXY http_proxy https_proxy; echo "Cleared proxy settings"'
-
-# Homebrew
-abbr -a brewClean 'brew cleanup; and brew autoremove'
-
 # 应用程序
 abbr -a lg lazygit
 abbr -a py python3
