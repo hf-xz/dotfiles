@@ -19,7 +19,7 @@ config = {
 
 	window_padding = {
 		top = 20,
-		bottom = 20,
+		bottom = 10,
 		left = 20,
 		right = 20,
 	},
