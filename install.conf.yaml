@@ -1,7 +1,7 @@
 - defaults:
     link:
-      create: true
-      relink: true
+        create: true
+        relink: true
 
 - clean: ["~"]
 
@@ -16,6 +16,7 @@
     ~/.scripts:
     ~/.config/wezterm/wezterm.lua: wezterm/wezterm.lua
     ~/.config/fish/config.fish: fish/config.fish
+    ~/.config/fish/fish_plugins: fish/fish_plugins
     ~/.config/fish/conf.d: fish/conf.d/
     ~/.config/fish/functions: fish/functions/
     ~/.config/starship.toml: starship.toml

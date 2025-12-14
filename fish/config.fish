@@ -19,6 +19,9 @@ if test -e /opt/homebrew/bin/fnm
     eval (/opt/homebrew/bin/fnm env)
 end
 
+# Orbstack
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
 if status is-interactive
     # Vim mode
     fish_vi_key_bindings
@@ -40,8 +43,7 @@ if status is-interactive
 
     alias clear "command clear; commandline -f clear-screen"
     alias cl "command clear; commandline -f clear-screen"
-end
 
-# Added by OrbStack: command-line tools and integration
-# This won't be added again if you remove it.
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+    # No greeting
+    set fish_greeting
+end
