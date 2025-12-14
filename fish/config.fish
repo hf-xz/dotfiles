@@ -1,8 +1,12 @@
+# Path
+set -U fish_user_paths ~/bin /usr/local/bin $fish_user_paths
+
 # XDG_CONFIG_HOME
 set -gx XDG_CONFIG_HOME ~/.config
 
-# Path
-set -U fish_user_paths ~/bin /usr/local/bin $fish_user_paths
+# Editor
+set -gx EDITOR nvim
+alias vi nvim
 
 if status is-interactive
     # Vim mode

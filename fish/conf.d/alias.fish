@@ -1,6 +1,8 @@
 # 基础编辑器别名 - 使用 abbr
 abbr -a fishconf '$EDITOR ~/.config/fish/config.fish'
+abbr -a aliasconf '$EDITOR ~/.config/fish/conf.d/alias.fish'
 abbr -a starconf '$EDITOR ~/.config/starship.toml'
+abbr -a tmuxconf '$EDITOR ~/.config/tmux.conf'
 abbr -a sshconf '$EDITOR ~/.ssh/config'
 abbr -a gitconf '$EDITOR ~/.gitconfig'
 
