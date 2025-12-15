@@ -19,4 +19,9 @@ abbr -a nv 'neovide .'
 # Docker
 abbr -a compose docker-compose
 
+# dirh
+abbr -a d cdh
+abbr -a 1 prevd
+abbr -a 0 nextd
+
 # 临时别名
