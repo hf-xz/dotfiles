@@ -4,9 +4,9 @@ format = """
 [](red)\
 $os\
 $username\
-[](bg:peach fg:red)\
+[](bg:peach fg:red)\
 $directory\
-[](bg:yellow fg:peach)\
+[](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
 [ ](fg:yellow)\
@@ -21,10 +21,11 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:green bg:sapphire)\
+[](fg:green bg:sapphire)\
 $cmd_duration\
-[](fg:sapphire bg:lavender)\
+[](fg:sapphire bg:lavender)\
 $time\
+$sudo\
 [](fg:lavender)\
 $line_break\
 $character"""
@@ -152,6 +153,11 @@ disabled = true
 time_format = "%R"
 style = "bg:lavender"
 format = '[[  $time ](fg:crust bg:lavender)]($style)'
+
+[sudo]
+disabled = false
+style = "fg:yellow bg:lavender"
+format = "[ ]($style)"
 
 [line_break]
 disabled = false
