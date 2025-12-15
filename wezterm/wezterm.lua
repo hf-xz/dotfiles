@@ -17,6 +17,8 @@ config = {
 	window_background_opacity = 0.92,
 	macos_window_background_blur = 10,
 
+	adjust_window_size_when_changing_font_size = false,
+
 	window_padding = {
 		top = 20,
 		bottom = 10,

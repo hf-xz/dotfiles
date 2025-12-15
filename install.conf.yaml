@@ -22,6 +22,7 @@
     ~/.config/starship.toml: starship.toml
     ~/.config/lazygit/config.yml: lazygit/config.yml
     ~/.config/neovide/config.toml: neovide/config.toml
+    ~/.config/kanata: kanata/
     ~/.config/nvim: nvim/
     ~/.config/yazi: yazi/
     ~/.vimrc: nvim/vimrc
