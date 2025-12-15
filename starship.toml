@@ -70,14 +70,14 @@ format = '[ $user]($style)'
 style = "bg:peach fg:crust"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
+truncation_symbol = " "
 
 [directory.substitutions]
 "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = "󰝚 "
 "Pictures" = " "
-"Developer" = "󰲋 "
+"Coding" = "󰲋 "
 
 [git_branch]
 symbol = ""

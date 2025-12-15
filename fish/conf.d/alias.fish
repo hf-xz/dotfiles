@@ -25,3 +25,4 @@ abbr -a 1 prevd
 abbr -a 0 nextd
 
 # 临时别名
+abbr -a add-key 'ssh-add --apple-use-keychain ~/.ssh/hdzb ~/.ssh/id_ed25519'
