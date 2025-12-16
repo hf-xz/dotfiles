@@ -26,3 +26,7 @@ abbr -a 0 nextd
 
 # 临时别名
 abbr -a add-key 'ssh-add --apple-use-keychain ~/.ssh/hdzb ~/.ssh/id_ed25519'
+abbr -a dev 'fnm use; and yarn dev'
+
+abbr -a build-rsp 'ssh 50 "cd /data/appBins/esim-dev/rsp-ui && sh ./package.sh"'
+abbr -a build-rsp-prod 'ssh 54 "cd /data/appBins/esim/rsp-ui && sh ./package.sh"'

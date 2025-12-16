@@ -150,10 +150,10 @@ nnoremap <expr>zl Redraw()
 " H, L 跳转行首行尾
 " nnoremap H ^
 " nnoremap L $
-" vnoremap H ^
-" vnoremap L $
-" onoremap H ^
-" onoremap L $
+vnoremap H ^
+vnoremap L $
+onoremap H ^
+onoremap L $
 
 " K 开启下一行
 nnoremap K i<CR><ESC>
