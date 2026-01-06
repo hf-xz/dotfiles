@@ -25,3 +25,5 @@ abbr -a dev 'fnm use; and yarn dev'
 
 abbr -a build-rsp 'ssh 50 "cd /data/appBins/esim-dev/rsp-ui && sh ./package.sh"'
 abbr -a build-rsp-prod 'ssh 54 "cd /data/appBins/esim/rsp-ui && sh ./package.sh"'
+abbr -a build-traffic 'ssh 40 "cd /data/appBins/traffic/traffic-ui && sh ./package.sh"'
+abbr -a build-kms 'ssh 50 "cd /data/appBins/kms/kms-ui && sh ./package.sh"'
