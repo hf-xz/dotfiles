@@ -20,3 +20,5 @@
   default = upstream
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
