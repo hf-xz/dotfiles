@@ -2,12 +2,12 @@
 
 # 代理配置
 set -gx PROXY_URL "http://127.0.0.1:7890"
-set -gx SOCKS_URL "socks5://127.0.0.1:7890"
+#set -gx SOCKS_URL "socks5://127.0.0.1:7890"
 
 # 默认开启代理
 set -gx https_proxy $PROXY_URL
 set -gx http_proxy $PROXY_URL
-set -gx all_proxy $SOCKS_URL
+#set -gx all_proxy $SOCKS_URL
 
 # 代理控制函数
 function proxy -d "控制代理设置: proxy on | off"

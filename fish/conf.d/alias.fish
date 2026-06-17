@@ -6,6 +6,10 @@ abbr -a tmuxconf '$EDITOR ~/.config/tmux/tmux.conf'
 abbr -a sshconf '$EDITOR ~/.ssh/config'
 abbr -a gitconf '$EDITOR ~/.gitconfig'
 
+# ssh proxy 转发本地代理给服务器用
+abbr -a sshProxy 'ssh -CNR 7890:localhost:7890'
+abbr -a sshProxyd 'ssh -fCNR 7890:localhost:7890' # 后台运行
+
 # 应用程序
 abbr -a lg lazygit
 abbr -a py python3
@@ -18,6 +22,10 @@ abbr -a compose docker-compose
 abbr -a d cdh
 abbr -a 1 prevd
 abbr -a 0 nextd
+
+# TailScale
+abbr -a ts tailscale
+abbr -a tss tailscale status
 
 # 临时别名
 abbr -a add-key 'ssh-add --apple-use-keychain ~/.ssh/hdzb ~/.ssh/id_ed25519'
